@@ -18,4 +18,4 @@ export GDLIB_CHARACTER_FILE=$CHARACTER_FILE
 export GDLIB_ANIMATIONS_DIR=$ANIMATIONS_DIR
 export GDLIB_OUTPUT_FILE=$OUTPUT_FILE
 
-blender --background -noaudio -P "$DIR/mixamo_to_glb.py"
+blender --background -noaudio -P "$DIR/fbx_to_glb.py"
