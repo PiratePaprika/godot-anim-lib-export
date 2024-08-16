@@ -4,8 +4,7 @@
 
 DIR=$(dirname "$0")
 
-rm -rf "$DIR/gd-proj-template/.godot"
-godot --path "$DIR/gd-proj-template" -e --import
+rm -rf "$DIR/project_template/.godot"
+godot --path "$DIR/project_template" -e --import --headless
 
-shopt -s globstar nullglob
-mv "$DIR/gd-proj-template/.godot/imported/"*.res "$1"
+cp "$DIR/project_template/.godot/imported/anims.glb-72c30470287f9d967e9a1d2a97bad8ec.res" "$1"
