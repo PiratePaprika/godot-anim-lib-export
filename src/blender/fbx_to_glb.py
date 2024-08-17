@@ -7,6 +7,10 @@ character_file = os.environ["GDLIB_CHARACTER_FILE"]
 animations_dir = os.environ["GDLIB_ANIMATIONS_DIR"]
 output_file = os.environ["GDLIB_OUTPUT_FILE"]
 
+# character_file = "/home/geo/dev/tools/godot-anim-lib-export/test/PolygonSyntyCharacter.fbx"
+# animations_dir = "/home/geo/dev/tools/godot-anim-lib-export/test/Idle Base"
+# output_file = "/home/geo/dev/tools/godot-anim-lib-export/test.glb"
+
 def get_selected_anim_data():
     for obj in bpy.context.selected_objects:
         if obj.animation_data:
@@ -30,6 +34,7 @@ animation_files = glob.glob(animations_dir + "/*.fbx")
 for file in animation_files:
     head, tail = os.path.split(file)
     basename, ext = os.path.splitext(tail)
+    print(f"=== import {file} ===")
     bpy.ops.import_scene.fbx(filepath=file)
     animation_data = bpy.context.object.animation_data
     action: Action = animation_data.action

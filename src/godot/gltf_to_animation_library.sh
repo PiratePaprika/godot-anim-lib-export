@@ -3,8 +3,9 @@
 #set -x
 
 DIR=$(dirname "$0")
+PROJECT_TEMPLATE="$DIR/project_template_43"
 
-rm -rf "$DIR/project_template/.godot"
-godot --path "$DIR/project_template" -e --import --headless
+rm -rf "$PROJECT_TEMPLATE/.godot"
+godot --path "$PROJECT_TEMPLATE" -e --import --headless
 
-cp "$DIR/project_template/.godot/imported/anims.glb-72c30470287f9d967e9a1d2a97bad8ec.res" "$1"
+cp "$PROJECT_TEMPLATE/.godot/imported/anims.glb-72c30470287f9d967e9a1d2a97bad8ec.res" "$1"
